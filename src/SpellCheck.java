@@ -24,17 +24,21 @@ public class SpellCheck {
         int start = 0;
         int end = text.length - 1;
         int mid = (start + end) / 2;
-        for (String s : text) {
-            if (dictionary[mid].equals(s)) {
-                break;
+        for(String s: text) {
+            while(!s.equals(end)) {
+                System.out.println(s);
+                if (dictionary[mid].equals(s)) {
+                    break;
+                }
+                if (dictionary[mid].compareTo(s) < 0) {
+                    start = mid - 1;
+                } else if (dictionary[mid].compareTo(s) > 0) {
+                    start = mid + 1;
+                } else {
+                    found.add(s);
+                }
             }
-            if (dictionary[mid].compareTo(s) < 0) {
-                start = mid + 1;
-            } else if (dictionary[mid].compareTo(s) > 0) {
-                start = mid - 1;
-            } else {
-                found.add(s);
-            }
+
         }
         String[] finalFound = new String[found.size()];
         for(int i = 0; i < found.size(); i++) {
@@ -42,7 +46,30 @@ public class SpellCheck {
         }
         return finalFound;
     }
+    public String found(String[] text, String[] dictionary, int start, int end) {
+        int med = (end + start) / 2;
+        // Returns true if the dictionary at the medium value is the same as the String currently being searched for
+        if(dictionary[med].equals(text[med])) {
+            return null;
+        }
+        // Returns false if all the values have been checked and there's no match
+        else if(start >= end) {
+            return text[med];
+        }
+        // Changes end variable if the String being searched for is less than the medium value lexicographically
+        else if(dictionary[med].compareTo(text[med]) > 0) {
+            end = med - 1;
+        }
+        // Changes start variable if the String being searched for is greater than the medium value lexicographically
+        else if(DICTIONARY[med].compareTo(s) < 0) {
+            start = med + 1;
+        }
+        // Recursively calls the method with the new values until a match is found or not
+        return found( s, start, end);
+    }
 }
+
+
 
 // First idea:
     // Try binary search -- will be faster than linear
