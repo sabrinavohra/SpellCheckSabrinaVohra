@@ -1,10 +1,12 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 /**
  * Spell Check
  * A puzzle written by Zach Blick
  * for Adventures in Algorithms
  * At Menlo School in Atherton, CA
  *
- * Completed by: [YOUR NAME HERE]
+ * Completed by: Sabrina Vohra
  * */
 
 public class SpellCheck {
@@ -18,7 +20,29 @@ public class SpellCheck {
      * @return String[] of all mispelled words in the order they appear in text. No duplicates.
      */
     public String[] checkWords(String[] text, String[] dictionary) {
-
-        return null;
+        ArrayList<String> found = new ArrayList<>();
+        int start = 0;
+        int end = text.length - 1;
+        int mid = (start + end) / 2;
+        for (String s : text) {
+            if (dictionary[mid].equals(s)) {
+                break;
+            }
+            if (dictionary[mid].compareTo(s) < 0) {
+                start = mid + 1;
+            } else if (dictionary[mid].compareTo(s) > 0) {
+                start = mid - 1;
+            } else {
+                found.add(s);
+            }
+        }
+        String[] finalFound = new String[found.size()];
+        for(int i = 0; i < found.size(); i++) {
+            finalFound[i] = found.get(i);
+        }
+        return finalFound;
     }
 }
+
+// First idea:
+    // Try binary search -- will be faster than linear
