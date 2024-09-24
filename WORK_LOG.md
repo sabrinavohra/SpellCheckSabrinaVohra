@@ -1,10 +1,12 @@
 Name: Sabrina Vohra
 
-| Date |      Time      |                                                                                                                                Update |
-|:-----|:--------------:|--------------------------------------------------------------------------------------------------------------------------------------:|
-| 9/23 | 12:45 - 1:00pm |                                          I started to think about it in terms of binary search. I researched how to do binary search. |
-| 9/23 | 1:00 - 1:25pm  |                    I implemented binary search as best I could, but it doesn't quite work. I think I may have missed an if statement. |
-| 9/23 | 1:25 - 1:45pm  | I looked at SpellingBee from last year to find a recursive binary search algorith. I began to implement it, but haven't finished yet. |
+| Date |       Time       |                                                                                                                                                                                                                                                                              Update |
+|:-----|:----------------:|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| 9/23 |  12:45 - 1:00pm  |                                                                                                                                                                                        I started to think about it in terms of binary search. I researched how to do binary search. |
+| 9/23 |  1:00 - 1:25pm   |                                                                                                                                                                  I implemented binary search as best I could, but it doesn't quite work. I think I may have missed an if statement. |
+| 9/23 |  1:25 - 1:45pm   |                                                                                                                                              I looked at SpellingBee from last year to find a recursive binary search algorithm. I began to implement it, but haven't finished yet. |
+| 9/23 | 10:45 - 10:55pm  |                                                         I completed my trial of implementing binary search recursively as we did in Spelling Bee. However, I am running into a problem where the algorithm always returns null, even if the word does not appear in the dictionary. |
+| 9/23 | 10:55 - 11:05pm  | My problem was that my start and end lengths were determined by the length of the text rather than the length of the dictionary which was causing my problem. I was able to get my code using recursive binary search to work for the sentence, but none of the other tests so far. |
 
 
 To add a new row to the table, click into a cell and then hit shift-enter.

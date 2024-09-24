@@ -20,52 +20,56 @@ public class SpellCheck {
      * @return String[] of all mispelled words in the order they appear in text. No duplicates.
      */
     public String[] checkWords(String[] text, String[] dictionary) {
-        ArrayList<String> found = new ArrayList<>();
+        ArrayList<String> finalList = new ArrayList<>();
         int start = 0;
-        int end = text.length - 1;
+        int end = dictionary.length - 1;
         int mid = (start + end) / 2;
         for(String s: text) {
-            while(!s.equals(end)) {
-                System.out.println(s);
-                if (dictionary[mid].equals(s)) {
-                    break;
-                }
-                if (dictionary[mid].compareTo(s) < 0) {
-                    start = mid - 1;
-                } else if (dictionary[mid].compareTo(s) > 0) {
-                    start = mid + 1;
-                } else {
-                    found.add(s);
-                }
+            String current = found(s, dictionary, start, end);
+            if(current != null) {
+                finalList.add(current);
             }
+//            while(!s.equals(end)) {
+//                System.out.println(s);
+//                if (dictionary[mid].equals(s)) {
+//                    break;
+//                }
+//                if (dictionary[mid].compareTo(s) < 0) {
+//                    start = mid - 1;
+//                } else if (dictionary[mid].compareTo(s) > 0) {
+//                    start = mid + 1;
+//                } else {
+//                    found.add(s);
+//                }
+//            }
 
         }
-        String[] finalFound = new String[found.size()];
-        for(int i = 0; i < found.size(); i++) {
-            finalFound[i] = found.get(i);
+        String[] finalFound = new String[finalList.size()];
+        for(int i = 0; i < finalList.size(); i++) {
+            finalFound[i] = finalList.get(i);
         }
+        System.out.println(finalList);
         return finalFound;
     }
-    public String found(String[] text, String[] dictionary, int start, int end) {
+
+    public String found(String s, String[] dictionary, int start, int end) {
         int med = (end + start) / 2;
-        // Returns true if the dictionary at the medium value is the same as the String currently being searched for
-        if(dictionary[med].equals(text[med])) {
+        if(dictionary[med].equals(s)) {
             return null;
         }
-        // Returns false if all the values have been checked and there's no match
         else if(start >= end) {
-            return text[med];
+            return s;
         }
         // Changes end variable if the String being searched for is less than the medium value lexicographically
-        else if(dictionary[med].compareTo(text[med]) > 0) {
+        else if(dictionary[med].compareTo(s) > 0) {
             end = med - 1;
         }
         // Changes start variable if the String being searched for is greater than the medium value lexicographically
-        else if(DICTIONARY[med].compareTo(s) < 0) {
+        else if(dictionary[med].compareTo(s) < 0) {
             start = med + 1;
         }
         // Recursively calls the method with the new values until a match is found or not
-        return found( s, start, end);
+        return found(s, dictionary, start, end);
     }
 }
 
