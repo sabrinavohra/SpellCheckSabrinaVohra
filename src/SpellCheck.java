@@ -26,8 +26,8 @@ public class SpellCheck {
         boolean repeat = false;
         for(String s: text) {
             String current = found(s, dictionary, start, end);
-            if(current != null && !(finalList.contains(current)) ) {
-                    finalList.add(current);
+            if(current != null && !finalList.contains(current)) {
+                finalList.add(current);
             }
         }
         String[] finalFound = new String[finalList.size()];
@@ -54,8 +54,3 @@ public class SpellCheck {
         return found(s, dictionary, start, end);
     }
 }
-
-
-
-// First idea:
-    // Try binary search -- will be faster than linear
