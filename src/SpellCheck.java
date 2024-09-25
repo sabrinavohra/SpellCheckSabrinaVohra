@@ -23,7 +23,6 @@ public class SpellCheck {
         ArrayList<String> finalList = new ArrayList<>();
         int start = 0;
         int end = dictionary.length - 1;
-        boolean repeat = false;
         for(String s: text) {
             String current = found(s, dictionary, start, end);
             if(current != null && !finalList.contains(current)) {
