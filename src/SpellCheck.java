@@ -73,6 +73,7 @@ public class SpellCheck {
     }
 
     public String quickSort() {
+        int compare = 0;
 
     }
 }

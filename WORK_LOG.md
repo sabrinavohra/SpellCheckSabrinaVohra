@@ -7,7 +7,7 @@ Name: Sabrina Vohra
 | 9/23 |  1:25 - 1:45pm  |                                                                                                                                              I looked at SpellingBee from last year to find a recursive binary search algorithm. I began to implement it, but haven't finished yet. |
 | 9/23 | 10:45 - 10:55pm |                                                         I completed my trial of implementing binary search recursively as we did in Spelling Bee. However, I am running into a problem where the algorithm always returns null, even if the word does not appear in the dictionary. |
 | 9/23 | 10:55 - 11:05pm | My problem was that my start and end lengths were determined by the length of the text rather than the length of the dictionary which was causing my problem. I was able to get my code using recursive binary search to work for the sentence, but none of the other tests so far. |
-| 9/24 | 11:40 - 11:50pm |                                             I realized that the other test cases aren't working with my current sorting algorithm because it is too slow. I looked into other sorting algorithms online which could be faster. I decided to try to implement a QuickSort algorithm. |
+| 9/24 | 11:40 - 11:50pm |                                             I realized that the other test cases aren't working with my current sorting algorithm because it is too slow. I looked into other sorting algorithms online which could be faster. I decided to try to implement an interpolation sort. |
 
 
 To add a new row to the table, click into a cell and then hit shift-enter.
