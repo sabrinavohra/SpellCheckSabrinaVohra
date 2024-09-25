@@ -71,6 +71,10 @@ public class SpellCheck {
         // Recursively calls the method with the new values until a match is found or not
         return found(s, dictionary, start, end);
     }
+
+    public String quickSort() {
+
+    }
 }
 
 
