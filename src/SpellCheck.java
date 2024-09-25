@@ -23,32 +23,19 @@ public class SpellCheck {
         ArrayList<String> finalList = new ArrayList<>();
         int start = 0;
         int end = dictionary.length - 1;
-        int mid = (start + end) / 2;
+        boolean repeat = false;
         for(String s: text) {
             String current = found(s, dictionary, start, end);
-            if(current != null) {
-                finalList.add(current);
+            if(current != null ) {
+                if(!(finalList.contains(current))) {
+                    finalList.add(current);
+                }
             }
-//            while(!s.equals(end)) {
-//                System.out.println(s);
-//                if (dictionary[mid].equals(s)) {
-//                    break;
-//                }
-//                if (dictionary[mid].compareTo(s) < 0) {
-//                    start = mid - 1;
-//                } else if (dictionary[mid].compareTo(s) > 0) {
-//                    start = mid + 1;
-//                } else {
-//                    found.add(s);
-//                }
-//            }
-
         }
         String[] finalFound = new String[finalList.size()];
         for(int i = 0; i < finalList.size(); i++) {
             finalFound[i] = finalList.get(i);
         }
-        System.out.println(finalList);
         return finalFound;
     }
 
@@ -60,21 +47,13 @@ public class SpellCheck {
         else if(start >= end) {
             return s;
         }
-        // Changes end variable if the String being searched for is less than the medium value lexicographically
         else if(dictionary[med].compareTo(s) > 0) {
             end = med - 1;
         }
-        // Changes start variable if the String being searched for is greater than the medium value lexicographically
         else if(dictionary[med].compareTo(s) < 0) {
             start = med + 1;
         }
-        // Recursively calls the method with the new values until a match is found or not
         return found(s, dictionary, start, end);
-    }
-
-    public String quickSort() {
-        int compare = 0;
-
     }
 }
 
