@@ -26,10 +26,8 @@ public class SpellCheck {
         boolean repeat = false;
         for(String s: text) {
             String current = found(s, dictionary, start, end);
-            if(current != null ) {
-                if(!(finalList.contains(current))) {
+            if(current != null && !(finalList.contains(current)) ) {
                     finalList.add(current);
-                }
             }
         }
         String[] finalFound = new String[finalList.size()];
