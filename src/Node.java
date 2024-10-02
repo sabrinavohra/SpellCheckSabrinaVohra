@@ -6,6 +6,7 @@ public class Node {
 
     public Node(char value) {
         Node[] currentArray = new Node[NUM_CHARS];
+        Node[] next = new Node[NUM_CHARS];
         this.value = value;
     }
 
@@ -32,7 +33,7 @@ public class Node {
         return value;
     }
     // Gets the next node to continue the word
-    public Node[] getNext() {
+    public Node[] getNext(int) {
         return next;
     }
 }
