@@ -1,27 +1,24 @@
 public class Trie {
-    Node root;
-    Node[] leaves;
+    private Node root;
 
     public Trie() {
-        Node[] trie = new Node['0'];
+        root = new Node();
     }
 
     void insert(String s) {
-        for(int i = 0; i < s.length(); i++) {
-            Node current = root;
-            for(int i = 0; i < s.length() - 1; i++) {
-                int j = 0;
-                if(i == '/') {
-                    j = 26;
-                }
-                else if(i >= 'a' && i <= 'z') {
-                    j = (int) i - 'a';
-                }
-                if(current.getNext() == null) {
-                    Node theNext = current.getNext();
-                    current.getNext().setValue(s.charAt(i));
-                }
+        Node current = root;
+        for(int i = 0; i < s.length() - 1; i++) {
+            int j = 0;
+            if(i == '/') {
+                j = 26;
             }
+            else if(i >= 'a' && i <= 'z') {
+                j = (int) i - 'a';
+            }
+            if(current.trie[j] == null) {
+                current.trie[j] = new Node();
+            }
+        }
 
 
             Node current = new Node(s.charAt(i));

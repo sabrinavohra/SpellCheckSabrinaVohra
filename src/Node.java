@@ -1,13 +1,9 @@
 public class Node {
     public static final int NUM_CHARS  = 255;
-    private boolean isWord;
-    private char value;
-    private Node[] next;
+    private boolean isWord = false;
+    private Node[] next = new Node[27];
 
-    public Node(char value) {
-        Node[] currentArray = new Node[NUM_CHARS];
-        Node[] next = new Node[NUM_CHARS];
-        this.value = value;
+    public Node() {
     }
 
     // Checks if the node has ended the word / contains the final letter of a word
@@ -25,13 +21,6 @@ public class Node {
         }
     }
 
-    public void setValue(char value) {
-        this.value = value;
-    }
-
-    public char getValue () {
-        return value;
-    }
     // Gets the next node to continue the word
     public Node[] getNext() {
         return next;
