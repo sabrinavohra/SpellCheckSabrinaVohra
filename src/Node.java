@@ -33,7 +33,7 @@ public class Node {
         return value;
     }
     // Gets the next node to continue the word
-    public Node[] getNext(int) {
+    public Node[] getNext() {
         return next;
     }
 }
