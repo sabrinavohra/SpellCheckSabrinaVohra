@@ -8,17 +8,14 @@ public class Node {
 
     // Checks if the node has ended the word / contains the final letter of a word
     boolean isWord() {
-        return false;
+        return isWord;
     }
 
-    // Sets the node as the final letter of a word
-    void setWord(boolean value) {
-        if(value) {
+    void setWord(boolean end) {
+        if(end) {
             isWord = true;
         }
-        else {
-            isWord = false;
-        }
+        isWord = false;
     }
 
     // Gets the next node to continue the word
