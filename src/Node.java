@@ -1,7 +1,7 @@
 public class Node {
     public static final int NUM_CHARS  = 255;
     private boolean isWord = false;
-    public Node[] next = new Node[27];
+    public Node[] next = new Node[NUM_CHARS];
 
     public Node() {
     }
