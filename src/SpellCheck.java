@@ -10,8 +10,6 @@ import java.util.Arrays;
  * */
 
 public class SpellCheck {
-
-
     /**
      * checkWords finds all words in text that are not present in dictionary
      *
@@ -40,6 +38,7 @@ public class SpellCheck {
         for(int i = 0; i < finalList.size(); i++) {
             finalMisspelled[i] = finalList.get(i);
         }
+        dictionaryList.printTrie();
         return finalMisspelled;
     }
 }
