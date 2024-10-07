@@ -9,13 +9,14 @@ public class Trie {
 
     void insert(String s) {
         Node current = root;
-        for (int i = 0; i < s.length() - 1; i++) {
+        for (int i = 0; i < s.length(); i++) {
             int j = 0;
-            if (i == '/') {
+            if (s.charAt(i) == '\'') {
                 j = 26;
-            } else if (i >= 'a' && i <= 'z') {
+            } else if ((s.charAt(i) >= 'a') && (s.charAt(i) <= 'z')) {
                 j = i - 'a';
             }
+
             if(current.next[j] == null) {
                 current.next[j] = new Node();
             }
@@ -26,22 +27,21 @@ public class Trie {
 
     boolean lookup (String s) {
         Node current = root;
-        for (int i = 0; i < s.length() - 1; i++) {
+        for (int i = 0; i < s.length(); i++) {
             int j = 0;
-            if (i == '/') {
+            if (s.charAt(i) == '\'') {
                 j = 26;
             }
-            else if (i >= 'a' && i <= 'z') {
+            else if (s.charAt(i) >= 'a' && s.charAt(i) <= 'z') {
                 j = i - 'a';
             }
-            if (current.next[j] == null) {
+
+            if(current.next[j] == null) {
                 return false;
             }
-            else if(current.next[j].equals(s.charAt(i+1))) {
-                current = current.next[s.charAt(i + 1)];
-            }
+            current = current.next[j];
         }
-        return true;
+        return current.isWord();
     }
 
     // Prints out trie for debugging purposes

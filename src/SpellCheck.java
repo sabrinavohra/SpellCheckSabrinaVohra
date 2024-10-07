@@ -38,7 +38,7 @@ public class SpellCheck {
         for(int i = 0; i < finalList.size(); i++) {
             finalMisspelled[i] = finalList.get(i);
         }
-        dictionaryList.printTrie();
+        misspelled.printTrie();
         return finalMisspelled;
     }
 }
