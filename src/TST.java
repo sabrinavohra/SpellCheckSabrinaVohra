@@ -1,20 +1,18 @@
 public class TST {
-    private Node root;
+    private TSTNode root;
 
     public TST() {
-        root = new Node();
+        root = new TSTNode();
     }
 
     public void insert(String s) {
-        Node current = root;
+        TSTNode current = root;
         int i = 0;
         while(i <= s.length()) {
-            int j = s.charAt(i);
-            if(current.next[j].equals(j)) {
-                current = current.next[j];
-                i++;
+            char j = s.charAt(i);
+            if(root.getMiddle() == null) {
+
             }
-            if(current.next[j] )
         }
     }
 

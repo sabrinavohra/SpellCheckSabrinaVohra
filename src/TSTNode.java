@@ -6,8 +6,7 @@ public class TSTNode {
     private TSTNode left;
     private char letter;
 
-    public TSTNode(char letter) {
-        this.letter = letter;
+    public TSTNode() {
     }
 
     boolean isWord() {
@@ -16,6 +15,10 @@ public class TSTNode {
 
     void setWord(boolean end) {
         isWord = end;
+    }
+
+    public void setLetter (char letter) {
+        this.letter = letter;
     }
 
     public TSTNode getLeft() {
