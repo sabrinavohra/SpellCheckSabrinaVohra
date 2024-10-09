@@ -18,16 +18,18 @@ public class SpellCheck {
      * @return String[] of all mispelled words in the order they appear in text. No duplicates.
      */
     public String[] checkWords(String[] text, String[] dictionary) {
-        Trie dictionaryTrie = new Trie();
+        TST glossary = new TST();
+        //Trie glossary = new Trie();
         for (int i = 0; i < dictionary.length; i++) {
-            dictionaryTrie.insert(dictionary[i]);
+            glossary.insert(dictionary[i]);
         }
 
         ArrayList<String> finalList = new ArrayList<>();
-        Trie misspelled = new Trie();
+        TST misspelled = new TST();
+        //Trie misspelled = new Trie();
         for (int i = 0; i < text.length; i++) {
             if (!misspelled.lookup(text[i])) {
-                if (!dictionaryTrie.lookup(text[i])) {
+                if (!glossary.lookup(text[i])) {
                     misspelled.insert(text[i]);
                     finalList.add(text[i]);
                 }

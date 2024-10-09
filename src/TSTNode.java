@@ -30,23 +30,23 @@ public class TSTNode {
 
     public void setLeft(char lletter)
     {
-        char leftLetter = lletter;
+        letter = lletter;
     }
 
     public TSTNode getMiddle() {
         return this.middle;
     }
 
-    public TSTNode setMiddle(char mletter) {
-        char middleLetter = mletter;
+    public void setMiddle(char mletter) {
+        letter = mletter;
     }
 
     public TSTNode getRight() {
         return this.right;
     }
 
-    public TSTNode setRight(char rletter) {
-        char rightletter = rletter;
+    public void setRight(char rletter) {
+        letter = rletter;
     }
 
     public char getLetter() {
