@@ -9,6 +9,9 @@ public class TSTNode {
     public TSTNode() {
     }
 
+    public TSTNode(char letter) {
+        this.letter = letter;
+    }
     boolean isWord() {
         return isWord;
     }
@@ -25,12 +28,25 @@ public class TSTNode {
         return this.left;
     }
 
+    public void setLeft(char lletter)
+    {
+        char leftLetter = lletter;
+    }
+
     public TSTNode getMiddle() {
         return this.middle;
     }
 
+    public TSTNode setMiddle(char mletter) {
+        char middleLetter = mletter;
+    }
+
     public TSTNode getRight() {
         return this.right;
+    }
+
+    public TSTNode setRight(char rletter) {
+        char rightletter = rletter;
     }
 
     public char getLetter() {
