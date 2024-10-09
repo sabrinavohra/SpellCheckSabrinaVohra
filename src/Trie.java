@@ -13,15 +13,7 @@ public class Trie {
         Node current = root;
         // Creates for loop to work through word
         for (int i = 0; i < s.length(); i++) {
-            int j = 0;
-            // Checks if letter doesn't exist
-            if (s.charAt(i) == '\'') {
-                j = 26;
-            }
-            // Checks if letter is between a and z and finds correct index value accordingly
-            else if ((s.charAt(i) >= 'a') && (s.charAt(i) <= 'z')) {
-                j = s.charAt(i) - 'a';
-            }
+            int j = s.charAt(i);
             // Creates new node if node for the correct letter doesn't exist
             if(current.next[j] == null) {
                 current.next[j] = new Node();
@@ -39,15 +31,7 @@ public class Trie {
         Node current = root;
         // Creates for loop to search through every letter in word
         for (int i = 0; i < s.length(); i++) {
-            int j = 0;
-            // Checks if letter exists
-            if (s.charAt(i) == '\'') {
-                j = 26;
-            }
-            else if (s.charAt(i) >= 'a' && s.charAt(i) <= 'z') {
-                j = s.charAt(i) - 'a';
-            }
-
+            int j = s.charAt(i);
             // Returns false if the next letter isn't in the trie because the word isn't in the tree
             if(current.next[j] == null) {
                 return false;

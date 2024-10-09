@@ -1,10 +1,7 @@
 public class Node {
-    public static final int NUM_CHARS  = 255;
+    public static final int NUM_CHARS = 256;
     private boolean isWord = false;
     public Node[] next = new Node[NUM_CHARS];
-
-    public Node() {
-    }
 
     // Checks if the node has ended the word / contains the final letter of a word
     boolean isWord() {
@@ -12,10 +9,7 @@ public class Node {
     }
 
     void setWord(boolean end) {
-        if(end) {
-            isWord = true;
-        }
-        isWord = false;
+        isWord = end;
     }
 
     // Gets the next node to continue the word
