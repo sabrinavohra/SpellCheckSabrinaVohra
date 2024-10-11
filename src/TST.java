@@ -14,6 +14,10 @@ public class TST {
                 current.setMiddle(s.charAt(i));
                 i++;
             }
+            else if(current.getMiddle() != null && current.getMiddle().getLetter() == j) {
+                current.setMiddle(s.charAt(i));
+                i++;
+            }
             else if(j > current.getMiddle().getLetter()) {
                 if(current.getRight() == null) {
                     current.setRight(s.charAt(i));
@@ -41,21 +45,22 @@ public class TST {
             if(current.getMiddle() == null) {
                 return false;
             }
+            else if (current.getMiddle().getLetter() == j) {
+                    current = current.getMiddle();
+                }
             else if(j > current.getMiddle().getLetter()) {
                 if(current.getRight() == null) {
-                    current.setRight(s.charAt(i + 1));
-                    i++;
+                    return false;
                 }
-                else {
+                else if(current.getRight().getLetter() == j) {
                     current = current.getRight();
                 }
             }
             else if(j < current.getMiddle().getLetter()) {
                 if(current.getLeft() == null) {
-                    current.setLeft(s.charAt(i + 1));
-                    i++;
+                    return false;
                 }
-                else {
+                else if(current.getLeft().getLetter() == j) {
                     current = current.getLeft();
                 }
             }
