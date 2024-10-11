@@ -30,7 +30,7 @@ public class TSTNode {
 
     public void setLeft(char lletter)
     {
-        letter = lletter;
+        left = new TSTNode(lletter);
     }
 
     public TSTNode getMiddle() {
@@ -38,7 +38,7 @@ public class TSTNode {
     }
 
     public void setMiddle(char mletter) {
-        letter = mletter;
+        middle = new TSTNode(mletter);
     }
 
     public TSTNode getRight() {
@@ -46,7 +46,7 @@ public class TSTNode {
     }
 
     public void setRight(char rletter) {
-        letter = rletter;
+        right = new TSTNode(rletter);
     }
 
     public char getLetter() {
